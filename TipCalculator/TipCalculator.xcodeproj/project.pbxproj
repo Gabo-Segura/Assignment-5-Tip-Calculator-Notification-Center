@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5517CBC2791406000168EB9 /* AutoResizeViewControllerForKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5517CBB2791406000168EB9 /* AutoResizeViewControllerForKeyboard.swift */; };
 		C59AE5EA2790F3C40046AF77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AE5E92790F3C40046AF77 /* AppDelegate.swift */; };
 		C59AE5EC2790F3C40046AF77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59AE5EB2790F3C40046AF77 /* ViewController.swift */; };
 		C59AE5EF2790F3C40046AF77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C59AE5ED2790F3C40046AF77 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C5517CBB2791406000168EB9 /* AutoResizeViewControllerForKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizeViewControllerForKeyboard.swift; sourceTree = "<group>"; };
 		C59AE5E62790F3C40046AF77 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C59AE5E92790F3C40046AF77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C59AE5EB2790F3C40046AF77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				C59AE5E92790F3C40046AF77 /* AppDelegate.swift */,
+				C5517CBB2791406000168EB9 /* AutoResizeViewControllerForKeyboard.swift */,
 				C59AE5EB2790F3C40046AF77 /* ViewController.swift */,
 				C59AE5ED2790F3C40046AF77 /* Main.storyboard */,
 				C59AE5F02790F3C70046AF77 /* Assets.xcassets */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C59AE5EC2790F3C40046AF77 /* ViewController.swift in Sources */,
+				C5517CBC2791406000168EB9 /* AutoResizeViewControllerForKeyboard.swift in Sources */,
 				C59AE5EA2790F3C40046AF77 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

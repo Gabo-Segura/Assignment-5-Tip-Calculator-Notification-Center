@@ -36,6 +36,18 @@ extension UITextField {
     }
 }
 
+extension UIViewController {
+    func dismissKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer( target:     self, action:    #selector(UIViewController.dismissKeyboardTouchOutside))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc private func dismissKeyboardTouchOutside() {
+        view.endEditing(true)
+    }
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var amountBill: UITextField!
@@ -44,12 +56,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipAmountLabel: UILabel!
     @IBOutlet weak var adjustTipPercentage: UISlider!
     
+    var keyboardHeight: CGFloat = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tipPercentageTextField.percentValue = adjustTipPercentage.value
         calculateTip.layer.cornerRadius = 10
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+        self.dismissKeyboard()
+
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
+        }
+    }
+    
+    
+    
+    
     
     @IBAction func amountBillFilled(_ sender: UITextField) {
         tipActionCalculate()
